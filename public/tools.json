@@ -1,0 +1,65 @@
+[
+    {
+        "id": 1,
+        "img": "https://i.ibb.co/ZNFkNdR/269262428-105892941958862-562220259657470755-n.png",
+        "name": "Bearing Aluminum Alloy Pedals",
+        "price": "19",
+        "minOrder": "10",
+        "stock": "500",
+        "description": "When it comes to traveling, things are as good as they get. So I brought Bridget, some good jackets.Lite weight, easy to cary"
+    },
+    {
+        "id": 2,
+        "img": "https://img.joomcdn.net/65ff3b118c6a511a8b5a29c800b801521320ca52_original.jpeg",
+        "name": "Bearing Rear Derailleur Pulleys",
+        "price": "750",
+        "minOrder": "10",
+        "stock": "500",
+        "description": "When it comes to traveling, things are as good as they get. So I brought Bridget, some good jackets.Lite weight, easy to cary"
+    },
+    {
+        "id": 3,
+        "img": "https://img.joomcdn.net/954c886ed70e2fbea233d9090dc4932e3f974029_original.jpeg",
+        "name": "Crank Arm Protector Case Cover Cap",
+        "price": "2",
+        "minOrder": "10",
+        "stock": "500",
+        "description": "When it comes to traveling, things are as good as they get. So I brought Bridget, some good jackets.Lite weight, easy to cary"
+    },
+    {
+        "id": 4,
+        "img": "https://img.joomcdn.net/45e9f5a19787470f7ac925416dfd01fea6b60760_original.jpeg",
+        "name": "Folding Bike Pedals Aluminium",
+        "price": "31",
+        "minOrder": "10",
+        "stock": "500",
+        "description": "When it comes to traveling, things are as good as they get. So I brought Bridget, some good jackets.Lite weight, easy to cary"
+    },
+    {
+        "id": 5,
+        "img": "https://img.joomcdn.net/1f2055bdfb07378b196c9b999fda105690283002_original.jpeg",
+        "name": "West Biking Bicycle Seat",
+        "price": "10",
+        "minOrder": "10",
+        "stock": "500",
+        "description": "When it comes to traveling, things are as good as they get. So I brought Bridget, some good jackets.Lite weight, easy to cary"
+    },
+    {
+        "id": 6,
+        "img": "https://img.joomcdn.net/0500d4e9f8ce628a3dfad827960718508d5346ec_original.jpeg",
+        "name": "WEST BIKING Waterproof Bicycle Bag",
+        "price": "15",
+        "minOrder": "10",
+        "stock": "500",
+        "description": "When it comes to traveling, things are as good as they get. So I brought Bridget, some good jackets.Lite weight, easy to cary"
+    },
+    {
+        "id": 7,
+        "img": "https://img.joomcdn.net/81138ccba170ad8fbeee937072158a88b63588c4_original.jpeg",
+        "name": "Exquisite Rechargeable Bicycle Light ",
+        "price": "3",
+        "minOrder": "10",
+        "stock": "500",
+        "description": "When it comes to traveling, things are as good as they get. So I brought Bridget, some good jackets.Lite weight, easy to cary"
+    }
+]

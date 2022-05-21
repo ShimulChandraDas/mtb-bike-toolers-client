@@ -1,9 +1,17 @@
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import Home from './Components/Home/Home';
+import Footer from './Shared/Footer';
+import Navbar from './Shared/Navbar';
 
 function App() {
   return (
     <div >
-      <h1 className='text-3xl font-bold text-center underline'>Hello MTB Bike Toolers</h1>
+      <Navbar />
+      <Routes>
+        <Route path='/' element={<Home />}></Route>
+      </Routes>
+      <Footer />
     </div>
   );
 }
