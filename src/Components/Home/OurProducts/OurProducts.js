@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import Product from '../Product';
+import PurchasedModal from '../PurchasedModal';
 
 const OurProducts = () => {
     const [tools, setTools] = useState([]);
+    const [purchased, setPurchased] = useState(null)
 
     useEffect(() => {
         fetch('tools.json')
@@ -19,9 +21,11 @@ const OurProducts = () => {
                     tools.map((tool) => <Product
                         key={tool.id}
                         tool={tool}
+                        setPurchased={setPurchased}
                     ></Product>)
                 }
             </div>
+            {purchased && <PurchasedModal purchased={purchased}></PurchasedModal>}
         </div>
     );
 };

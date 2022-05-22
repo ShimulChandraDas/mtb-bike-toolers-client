@@ -1,4 +1,5 @@
 import React from 'react';
+import Banner from './Banner';
 import Header from './Header';
 import Products from './Products';
 
@@ -7,8 +8,8 @@ const Home = () => {
         <div className='px-12'>
             <Header />
             <Products />
-            {/* <Banner />
-            <Product /> */}
+            <Banner />
+
 
 
         </div>

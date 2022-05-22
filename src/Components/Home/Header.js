@@ -3,8 +3,8 @@ import React from 'react';
 const Header = () => {
     return (
 
-        <div className="hero min-h-screen ">
-            <div className="hero-content flex-col gap-16 lg:flex-row">
+        <div className="hero card min-h-screen ">
+            <div className="hero-content flex-col  lg:flex-row">
                 <img src="https://i.ibb.co/Hgvnx41/parts.jpg" className="max-w-sm rounded-lg shadow-2xl" alt='' />
                 <div>
                     <h1 className="text-5xl font-bold">Box Office News!</h1>

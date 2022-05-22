@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import PurchasedModal from './PurchasedModal';
 
 import Product from './Product';
 
 
 const Products = () => {
     const [tools, setTools] = useState([]);
+    const [purchased, setPurchased] = useState(null)
+
+
 
     useEffect(() => {
         fetch('tools.json')
@@ -22,6 +26,7 @@ const Products = () => {
                     tools.slice(0, 6).map((tool) => <Product
                         key={tool.id}
                         tool={tool}
+                        setPurchased={setPurchased}
                     ></Product>)
                 }
 
@@ -30,6 +35,7 @@ const Products = () => {
                 <Link to='/ourProducts'> <button className=' btn-outline bg-sky-300 p-3  font-bold uppercase  rounded '>See More ----->  </button>
                 </Link>
             </div>
+            {purchased && <PurchasedModal purchased={purchased}></PurchasedModal>}
         </>
     );
 };
