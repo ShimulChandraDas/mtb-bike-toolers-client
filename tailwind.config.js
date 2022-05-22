@@ -16,7 +16,7 @@ module.exports = {
         },
       },
       {
-        dark: {
+        sunny: {
           primary: "#D9F99D",
           secondary: "#FDE68A",
           accent: "#4B5563",

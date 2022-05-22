@@ -1,0 +1,29 @@
+import React, { useEffect, useState } from 'react';
+import Product from '../Product';
+
+const OurProducts = () => {
+    const [tools, setTools] = useState([]);
+
+    useEffect(() => {
+        fetch('tools.json')
+            .then(res => res.json())
+            .then(data => {
+                setTools(data);
+            })
+    }, []);
+    return (
+        <div >
+            <h2 className='text-center text-3xl uppercase pt-10 text-primary font-bold'>Our Available Product: {tools.length}</h2>
+            <div className='grid grid-cols-1 pt-10  md:grid-cols-2 lg:grid-cols-3 gap-5'>
+                {
+                    tools.map((tool) => <Product
+                        key={tool.id}
+                        tool={tool}
+                    ></Product>)
+                }
+            </div>
+        </div>
+    );
+};
+
+export default OurProducts;

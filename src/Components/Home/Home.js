@@ -1,12 +1,14 @@
 import React from 'react';
-import Banner from './Banner';
-import Product from './Product';
+import Header from './Header';
+import Products from './Products';
 
 const Home = () => {
     return (
-        <div>
-            <Banner />
-            <Product />
+        <div className='px-12'>
+            <Header />
+            <Products />
+            {/* <Banner />
+            <Product /> */}
 
 
         </div>

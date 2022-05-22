@@ -6,7 +6,7 @@ const Navbar = () => {
     const menuItems =
         <>
             <li><Link to="/">Home</Link></li>
-            <li><Link to="/appointment">Appointment</Link></li>
+            <li><Link to="/ourProducts">Our Products</Link></li>
             <li><Link to="/reviews">Reviews</Link></li>
             <li><Link to="/dashboard">Dashboard</Link></li>
             <li><Link to="/blogs">Blogs</Link></li>
@@ -15,7 +15,7 @@ const Navbar = () => {
 
         </>
     return (
-        <div className="navbar z-50 bg-base-100">
+        <div className="navbar sticky top-0 z-50 bg-base-100">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex="0" className="btn btn-ghost lg:hidden">
