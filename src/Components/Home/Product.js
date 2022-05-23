@@ -17,7 +17,7 @@ const Product = ({ tool, setPurchased }) => {
                     <small className='text-center'>
                         {
                             stock > 0
-                                ? <strong>Quantity: {stock}</strong>
+                                ? <strong>Stocks: {stock}</strong>
                                 : <strong className='text-red-600'>Stock Out</strong>
                             // <strong>Quantity: {stock}</strong>
                         }

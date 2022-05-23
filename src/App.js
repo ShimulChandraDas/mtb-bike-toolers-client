@@ -8,7 +8,8 @@ import Profile from './Components/Home/Profile';
 import RequireAuth from './Components/Home/RequireAuth';
 import Footer from './Shared/Footer';
 import Navbar from './Shared/Navbar';
-
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 function App() {
   return (
     <div className='bg-slate-200' >
@@ -29,6 +30,7 @@ function App() {
         <Route path='/signup' element={<SignUp />}></Route>
       </Routes>
       <Footer />
+      <ToastContainer />
     </div>
   );
 }

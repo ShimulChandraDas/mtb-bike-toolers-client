@@ -1,7 +1,12 @@
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
+import { toast } from 'react-toastify';
+
 
 const PurchasedModal = ({ purchased, setPurchased }) => {
-    const { name, price, stock, description, img, payableAmount } = purchased;
+    const { _id, name, price, stock, description, img } = purchased;
+    const [user] = useAuthState(auth)
     //console.log(price);
 
     const handelOrder = event => {
@@ -9,13 +14,42 @@ const PurchasedModal = ({ purchased, setPurchased }) => {
         const price = event.target.price.value;
         const orderQuantity = event.target.orderQuantity.value;
         const payableAmount = price * orderQuantity;
-        console.log(payableAmount);
-        //setPurchased(null)
 
+        console.log(stock);
+        //setPurchased(null)
+        const order = {
+            purchasedId: _id,
+            purchased: name,
+            stock,
+            price,
+            orderQuantity,
+            payableAmount,
+            customer: user.email,
+            customerName: user.displayName
+
+        }
+        //console.log(order);
+        fetch('http://localhost:5000/order', {
+            method: "POST",
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(order)
+        })
+            .then(res => res.json())
+            .then(data => {
+
+                if (data.success) {
+                    toast.success(`Successfully order Placed ${name}`)
+                } else {
+                    toast.error(`You already ordered ${name} previously`)
+                }
+                setPurchased(null)
+            })
+
+        console.log(order);
 
     }
-
-
     return (
         <div>
             <input type="checkbox" id="purchased-modal" className="modal-toggle" />
@@ -31,12 +65,12 @@ const PurchasedModal = ({ purchased, setPurchased }) => {
                         <div className='flex gap-x-3 content-between text-left'>
                             <label className="label">
                                 <span className="label-text"> Price: </span>
-                                <input type="text" name='price' placeholder="Type here" disabled value={price} className="input w-full max-w-xs" />
+                                <input type="text" name='price' disabled value={price} className="input w-full max-w-xs" />
                             </label>
 
                             <label className="label">
-                                <span className="label-text">Quantity: </span>
-                                <input type="text" placeholder="" value={stock} disabled className="input w-full max-w-xs" />
+                                <span className="label-text">Stock: </span>
+                                <input type="text" value={stock} disabled className="input w-full max-w-xs" />
                             </label>
                         </div>
                         <label className="label">
