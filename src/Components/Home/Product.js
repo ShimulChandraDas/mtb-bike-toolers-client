@@ -2,7 +2,7 @@ import React from 'react';
 
 const Product = ({ tool, setPurchased }) => {
     const { name, img, description, price, minOrder, stock } = tool;
-    console.log(tool);
+    //console.log(tool);
 
 
     return (
@@ -26,10 +26,10 @@ const Product = ({ tool, setPurchased }) => {
                 <p>{description}</p>
                 <div className="card-actions justify-between">
                     <label
-                        for="purchased-modal"
+                        htmlFor="purchased-modal"
                         disabled={stock <= 0}
                         onClick={() => setPurchased(tool)}
-                        class="btn  btn-primary modal-button"> Purchased</label>
+                        className="btn  btn-primary modal-button"> Purchased</label>
 
                 </div>
             </div>

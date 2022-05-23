@@ -35,7 +35,10 @@ const Products = () => {
                 <Link to='/ourProducts'> <button className=' btn-outline bg-sky-300 p-3  font-bold uppercase  rounded '>See More ----->  </button>
                 </Link>
             </div>
-            {purchased && <PurchasedModal purchased={purchased}></PurchasedModal>}
+            {purchased && <PurchasedModal
+                purchased={purchased}
+                setPurchased={setPurchased}
+            ></PurchasedModal>}
         </>
     );
 };

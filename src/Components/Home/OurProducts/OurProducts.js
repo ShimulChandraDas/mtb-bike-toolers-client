@@ -25,7 +25,10 @@ const OurProducts = () => {
                     ></Product>)
                 }
             </div>
-            {purchased && <PurchasedModal purchased={purchased}></PurchasedModal>}
+            {purchased && <PurchasedModal
+                purchased={purchased}
+                setPurchased={setPurchased}
+            ></PurchasedModal>}
         </div>
     );
 };
