@@ -1,7 +1,7 @@
 import React from 'react';
 import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import Loading from '../../../Shared/Loading';
 import SocialLogin from './SocialLogin';
@@ -18,7 +18,7 @@ const SignUp = () => {
         error,
     ] = useCreateUserWithEmailAndPassword(auth);
 
-    const [updateProfile, updating, userError] = useUpdateProfile(auth);
+    const [updateProfile, updating, updateError] = useUpdateProfile(auth);
 
 
 
@@ -29,8 +29,8 @@ const SignUp = () => {
         return <Loading />
 
     }
-    if (error || gError || userError) {
-        signInError = <p className='text-red-500'><small>{error?.message || gError?.message || userError?.message}</small></p>
+    if (error || gError || updateError) {
+        signInError = <p className='text-red-500'><small>{error?.message || gError?.message || updateError?.message}</small></p>
     }
 
     // if (token) {
@@ -44,7 +44,7 @@ const SignUp = () => {
         await createUserWithEmailAndPassword(data.email, data.password)
         await updateProfile({ displayName: data.name });
         console.log('update name')
-        //navigate('/appointment')
+        //navigate('/ourProducts')
     }
     return (
         <div className='flex h-screen justify-center items-center '>
@@ -124,10 +124,13 @@ const SignUp = () => {
                         <input className='btn btn-info w-full max-w-xs' type="submit" value={"Sign Up"} />
 
                     </form>
-                    <p><small>Already Have an Account? <Link to="/login" className='text-secondary'>Create New Account</Link></small></p>
+                    <p><small>Already Have an Account? <Link to="/login" className='text-secondary'>Please Login </Link></small></p>
 
                     <div className="divider">OR</div>
-                    <SocialLogin />
+                    <button
+                        onClick={() => signInWithGoogle()}
+                        className="btn btn-outline"
+                    >Continue with Google</button>
 
                 </div>
             </div>

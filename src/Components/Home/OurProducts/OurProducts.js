@@ -7,7 +7,7 @@ const OurProducts = () => {
     const [purchased, setPurchased] = useState(null)
 
     useEffect(() => {
-        fetch('tools.json')
+        fetch('http://localhost:5000/tools')
             .then(res => res.json())
             .then(data => {
                 setTools(data);
@@ -19,7 +19,7 @@ const OurProducts = () => {
             <div className='grid grid-cols-1 pt-10  md:grid-cols-2 lg:grid-cols-3 gap-5'>
                 {
                     tools.map((tool) => <Product
-                        key={tool.id}
+                        key={tool._id}
                         tool={tool}
                         setPurchased={setPurchased}
                     ></Product>)
