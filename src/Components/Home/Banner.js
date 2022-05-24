@@ -4,7 +4,7 @@ const Banner = () => {
     return (
         <>
             <h1 className='text-center text-3xl uppercase pt-10 text-primary font-bold'> Our Best Work</h1>
-            <div style={{ height: '500px' }} className="carousel mt-6  mb-14">
+            <div style={{ height: '700px' }} className="carousel mt-6  mb-14">
                 <div id="slide1" className="carousel-item relative w-full">
                     <img src="https://i.ibb.co/Hgvnx41/parts.jpg" className="w-full" alt='' />
                     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
