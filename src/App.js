@@ -10,6 +10,9 @@ import Footer from './Shared/Footer';
 import Navbar from './Shared/Navbar';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Dashboard from './Components/Home/Dashboard/Dashboard';
+import MyOrder from './Components/Home/Dashboard/MyOrder';
+import MyReview from './Components/Home/Dashboard/MyReview';
 function App() {
   return (
     <div className='bg-slate-200' >
@@ -21,6 +24,17 @@ function App() {
             <OurProducts />
           </RequireAuth>
         }></Route>
+
+        <Route path='/dashBoard' element={
+          <RequireAuth>
+            <Dashboard />
+          </RequireAuth>
+        }>
+          <Route index element={<MyOrder />}></Route>
+          <Route path='myReview' element={<MyReview />}></Route>
+
+        </Route>
+
         <Route path='/profile' element={
           <RequireAuth>
             <Profile />
