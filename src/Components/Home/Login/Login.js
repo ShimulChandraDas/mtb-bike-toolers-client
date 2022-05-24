@@ -3,8 +3,8 @@ import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWith
 import { useForm } from 'react-hook-form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
+import useToken from '../../../Hooks/useToken';
 import Loading from '../../../Shared/Loading';
-import SocialLogin from './SocialLogin';
 
 const Login = () => {
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
@@ -18,7 +18,7 @@ const Login = () => {
     ] = useSignInWithEmailAndPassword(auth);
     //const [sendPasswordResetEmail, sending, verificationError] = useSendPasswordResetEmail(auth);
 
-    //const [token] = useToken(user || gUser)
+    const [token] = useToken(user || gUser)
 
 
     let signInError;
@@ -27,10 +27,10 @@ const Login = () => {
     let from = location.state?.from?.pathname || "/";
 
     useEffect(() => {
-        if (user || gUser) {
+        if (token) {
             navigate(from, { replace: true });
         }
-    }, [user, gUser, from, navigate])
+    }, [token, from, navigate])
 
 
     if (loading || gLoading) {

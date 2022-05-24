@@ -13,6 +13,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import Dashboard from './Components/Home/Dashboard/Dashboard';
 import MyOrder from './Components/Home/Dashboard/MyOrder';
 import MyReview from './Components/Home/Dashboard/MyReview';
+import User from './Components/Home/Dashboard/User';
+import RequireAdmin from './Components/Home/Login/RequireAdmin';
 function App() {
   return (
     <div className='bg-slate-200' >
@@ -32,6 +34,7 @@ function App() {
         }>
           <Route index element={<MyOrder />}></Route>
           <Route path='myReview' element={<MyReview />}></Route>
+          <Route path='users' element={<RequireAdmin><User /></RequireAdmin>}></Route>
 
         </Route>
 

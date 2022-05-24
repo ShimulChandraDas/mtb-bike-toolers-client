@@ -1,10 +1,11 @@
 import React from 'react';
 import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
+import useToken from '../../../Hooks/useToken';
 import Loading from '../../../Shared/Loading';
-import SocialLogin from './SocialLogin';
+
 
 const SignUp = () => {
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
@@ -20,9 +21,9 @@ const SignUp = () => {
 
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
 
+    const [token] = useToken(user || gUser);
 
-
-    //const navigate = useNavigate();
+    const navigate = useNavigate();
     let signInError;
 
     if (loading || gLoading || updating) {
@@ -33,11 +34,11 @@ const SignUp = () => {
         signInError = <p className='text-red-500'><small>{error?.message || gError?.message || updateError?.message}</small></p>
     }
 
-    // if (token) {
-    //     console.log(gUser, user);
-    //     navigate('/appointment')
+    if (token) {
+        //console.log(gUser, user);
+        navigate('/ourProducts')
 
-    // }
+    }
 
     const onSubmit = async data => {
         console.log(data);
