@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+
 import { useForm } from 'react-hook-form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
@@ -8,7 +9,7 @@ import Loading from '../../../Shared/Loading';
 
 const Login = () => {
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
-
+    //const [user, loading, error] = useAuthState(auth);
     const { register, formState: { errors }, handleSubmit } = useForm();
     const [
         signInWithEmailAndPassword,
@@ -19,6 +20,9 @@ const Login = () => {
     //const [sendPasswordResetEmail, sending, verificationError] = useSendPasswordResetEmail(auth);
 
     const [token] = useToken(user || gUser)
+    console.log(gUser);
+
+    //console.log(auth);
 
 
     let signInError;
@@ -27,6 +31,7 @@ const Login = () => {
     let from = location.state?.from?.pathname || "/";
 
     useEffect(() => {
+        console.log('called use effect');
         if (token) {
             navigate(from, { replace: true });
         }

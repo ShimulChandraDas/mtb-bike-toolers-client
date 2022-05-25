@@ -1,9 +1,10 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Product = ({ tool, setPurchased }) => {
     const { name, img, description, price, minOrder, stock } = tool;
-    //console.log(tool);
-
+    const currentPath = window.location.pathname;
+    const navigate = useNavigate()
 
     return (
 
@@ -28,7 +29,7 @@ const Product = ({ tool, setPurchased }) => {
                     <label
                         htmlFor="purchased-modal"
                         disabled={stock <= 0}
-                        onClick={() => setPurchased(tool)}
+                        onClick={currentPath === '/' ? () => navigate('/ourProducts') : () => setPurchased(tool)}
                         className="btn  btn-primary modal-button"> Purchased</label>
 
                 </div>

@@ -1,24 +1,26 @@
 import { signOut } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 
 const MyOrder = () => {
 
     const [orders, setOrders] = useState([]);
     const [user] = useAuthState(auth);
-    const navigate = useNavigate()
+    const navigate = useNavigate();
+
     useEffect(() => {
         if (user) {
             fetch(`http://localhost:5000/order?customer=${user.email}`, {
                 method: 'GET',
                 headers: {
-                    'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+                    //problem
+                    authorization: `Bearer ${localStorage.getItem('accessToken')}`
                 }
             })
                 .then(res => {
-                    console.log(res, 'response');
+                    console.log('response', res);
                     if (res.status === 401 || res.status === 403) {
                         signOut(auth)
                         localStorage.removeItem('accessToken')
@@ -46,6 +48,7 @@ const MyOrder = () => {
                             <th>Order Quantity</th>
                             <th>Payable Amount</th>
                             <th>Available Stock</th>
+                            <th>Payment</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -58,6 +61,18 @@ const MyOrder = () => {
                                     <td>{order.orderQuantity}</td>
                                     <td>{order.payableAmount}</td>
                                     <td>{order.stock}</td>
+                                    <td>
+                                        {(order.payableAmount && !order.paid)
+                                            &&
+                                            <Link to={`/dashboard/payment/${order._id}`} >
+                                                <button className='btn btn-xs btn-success'>Make Payment</button>
+                                            </Link>}
+                                        {(order.payableAmount && order.paid)
+                                            &&
+
+                                            <span className='text-success'>Paid</span>
+                                        }
+                                    </td>
 
                                 </tr>
                             )}

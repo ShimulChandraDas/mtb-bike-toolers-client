@@ -15,6 +15,8 @@ import MyOrder from './Components/Home/Dashboard/MyOrder';
 import MyReview from './Components/Home/Dashboard/MyReview';
 import User from './Components/Home/Dashboard/User';
 import RequireAdmin from './Components/Home/Login/RequireAdmin';
+import AddNewTools from './Shared/AddNewTools';
+import Payment from './Components/Home/Dashboard/Payment';
 function App() {
   return (
     <div className='bg-slate-200' >
@@ -33,11 +35,12 @@ function App() {
           </RequireAuth>
         }>
           <Route index element={<MyOrder />}></Route>
+          <Route path='payment/:id' element={<Payment />}></Route>
           <Route path='myReview' element={<MyReview />}></Route>
           <Route path='users' element={<RequireAdmin><User /></RequireAdmin>}></Route>
-
+          {/* <Route path='users' element={<User />}></Route> */}
+          <Route path='AddNewTools' element={<AddNewTools />}></Route>
         </Route>
-
         <Route path='/profile' element={
           <RequireAuth>
             <Profile />
