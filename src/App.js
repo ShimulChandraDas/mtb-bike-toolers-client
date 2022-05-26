@@ -17,6 +17,7 @@ import User from './Components/Home/Dashboard/User';
 import RequireAdmin from './Components/Home/Login/RequireAdmin';
 import AddNewTools from './Shared/AddNewTools';
 import Payment from './Components/Home/Dashboard/Payment';
+import Blogs from './Components/Home/Blogs';
 function App() {
   return (
     <div className='bg-slate-200' >
@@ -37,15 +38,13 @@ function App() {
           <Route index element={<MyOrder />}></Route>
           <Route path='payment/:id' element={<Payment />}></Route>
           <Route path='myReview' element={<MyReview />}></Route>
+          <Route path='profile' element={<Profile />}></Route>
           <Route path='users' element={<RequireAdmin><User /></RequireAdmin>}></Route>
           {/* <Route path='users' element={<User />}></Route> */}
           <Route path='AddNewTools' element={<AddNewTools />}></Route>
         </Route>
-        <Route path='/profile' element={
-          <RequireAuth>
-            <Profile />
-          </RequireAuth>
-        }></Route>
+
+        <Route path='/blogs' element={<Blogs />}></Route>
         <Route path='/login' element={<Login />}></Route>
         <Route path='/signup' element={<SignUp />}></Route>
       </Routes>

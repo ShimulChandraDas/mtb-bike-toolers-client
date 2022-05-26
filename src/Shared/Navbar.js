@@ -16,17 +16,13 @@ const Navbar = () => {
         <>
             <li><NavLink to="/">Home</NavLink ></li>
             <li><NavLink to="/ourProducts">Our Products</NavLink ></li>
+            <li><NavLink to="/blogs">Blogs</NavLink ></li>
 
             {
                 user &&
                 <li><NavLink to="/dashboard">Dashboard</NavLink ></li>
             }
-            <li><NavLink to="/reviews">Reviews</NavLink ></li>
-            <li><NavLink to="/blogs">Blogs</NavLink ></li>
-            <li><NavLink to="/about">About</NavLink ></li>
-            {
-                user && <li><NavLink to="/profile">{user?.displayName || 'Profile'}</NavLink ></li>
-            }
+
 
             <li>{
                 user ? <button className="btn btn-active btn-ghost" onClick={logOut}>Sign Out</button>

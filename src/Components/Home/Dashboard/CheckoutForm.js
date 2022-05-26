@@ -122,12 +122,12 @@ const CheckoutForm = ({ booking }) => {
                         },
                     }}
                 />
-                {/* <button className='btn btn-success btn-xs mt-5' type="submit" disabled={!stripe || !clientSecret||success}>
-                    Pay
-                </button> */}
-                <button className='btn btn-success btn-xs mt-5' type="submit" disabled={!stripe}>
+                <button className='btn btn-success btn-xs mt-5' type="submit" disabled={!stripe || !clientSecret || success}>
                     Pay
                 </button>
+                {/* <button className='btn btn-success btn-xs mt-5' type="submit" disabled={!stripe}>
+                    Pay
+                </button> */}
             </form>
             {
                 cardError && <p className='text-red-600'>{cardError}</p>
