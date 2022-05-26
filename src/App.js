@@ -19,6 +19,7 @@ import AddNewTools from './Shared/AddNewTools';
 import Payment from './Components/Home/Dashboard/Payment';
 import Blogs from './Components/Home/Blogs';
 import NotFound from './Shared/NotFound';
+import MyProfile from './Components/Home/MyProfile';
 function App() {
   return (
     <div className='bg-slate-200' >
@@ -46,6 +47,7 @@ function App() {
         </Route>
 
         <Route path='/blogs' element={<Blogs />}></Route>
+        <Route path='/myProfile' element={<MyProfile />}></Route>
         <Route path='/login' element={<Login />}></Route>
         <Route path='/signup' element={<SignUp />}></Route>
         <Route path='*' element={<NotFound />}></Route>
