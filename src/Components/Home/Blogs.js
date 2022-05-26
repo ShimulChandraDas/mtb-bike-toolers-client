@@ -4,6 +4,7 @@ import React from "react";
 const Blogs = () => {
     return (
         <div>
+            <h2 className="text-5xl font-bold text-center text-primary m-9 uppercase">My Blogs</h2>
             <div className="px-12 mt-10">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                     {/* Card 1 */}
