@@ -12,7 +12,7 @@ const MyOrder = () => {
 
     useEffect(() => {
         if (user) {
-            fetch(`http://localhost:5000/order?customer=${user.email}`, {
+            fetch(`https://aqueous-shore-65518.herokuapp.com/order?customer=${user.email}`, {
                 method: 'GET',
                 headers: {
                     //problem

@@ -38,7 +38,7 @@ const AddNewTools = () => {
 
                     }
                     //
-                    fetch(`http://localhost:5000/tools`, {
+                    fetch(`https://aqueous-shore-65518.herokuapp.com/tools`, {
                         method: "POST",
                         headers: {
                             'content-type': 'application/json'

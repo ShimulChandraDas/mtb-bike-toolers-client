@@ -9,7 +9,7 @@ const useAdmin = user => {
         //console.log(user?.email);
         if (email) {
             //console.log('from admin', email);
-            fetch(`http://localhost:5000/admin/${email}`, {
+            fetch(`https://aqueous-shore-65518.herokuapp.com/admin/${email}`, {
 
                 method: 'GET',
                 headers: {

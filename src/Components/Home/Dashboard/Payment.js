@@ -9,7 +9,7 @@ import CheckoutForm from './CheckoutForm';
 const stripePromise = loadStripe('pk_test_51L3Y9EBogagqon6E8UH8XoLkB0jySCBwBu3qRXNnp8Zq8tRxq1liF4Q6oMqTuG7JuSZ3PbB3WaEGJfSHARKRIWF4001nMmaxsZ');
 const Payment = () => {
     const { id } = useParams();
-    const url = `http://localhost:5000/order/${id}`
+    const url = `https://aqueous-shore-65518.herokuapp.com/order/${id}`
 
     const { data: booking, isLoading } = useQuery(['order', id], () => fetch(url, {
         method: 'GET',
