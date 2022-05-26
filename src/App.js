@@ -18,6 +18,7 @@ import RequireAdmin from './Components/Home/Login/RequireAdmin';
 import AddNewTools from './Shared/AddNewTools';
 import Payment from './Components/Home/Dashboard/Payment';
 import Blogs from './Components/Home/Blogs';
+import NotFound from './Shared/NotFound';
 function App() {
   return (
     <div className='bg-slate-200' >
@@ -47,6 +48,7 @@ function App() {
         <Route path='/blogs' element={<Blogs />}></Route>
         <Route path='/login' element={<Login />}></Route>
         <Route path='/signup' element={<SignUp />}></Route>
+        <Route path='*' element={<NotFound />}></Route>
       </Routes>
       <Footer />
       <ToastContainer />

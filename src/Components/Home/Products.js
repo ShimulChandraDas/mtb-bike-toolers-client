@@ -21,7 +21,7 @@ const Products = () => {
 
     return (
         <>
-            <h2 className='text-3xl m-3 uppercase font-bold text-center text-gray-700'>Our Exclusive Product</h2>
+            <h2 className='text-5xl font-bold text-center text-primary m-9 uppercase'>Our Exclusive Product</h2>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
                 {
                     tools.slice(0, 6).map((tool) => <Product
