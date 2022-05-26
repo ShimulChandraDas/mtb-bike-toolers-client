@@ -7,7 +7,7 @@ const Profile = () => {
 
             <form >
 
-                <input type="text" placeholder="Type here" class="input input-bordered input-md w-full max-w-xs" />
+                <input type="text" placeholder="Type here" className="input input-bordered input-md w-full max-w-xs" />
             </form>
 
         </div>
